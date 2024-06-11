@@ -102,12 +102,12 @@ end
 
 map({"i", "n", "v"}, "<f1>", make_toggler(vim.diagnostic.open_float))
 map("i", "<c-space>", "<C-x><C-o>")
-map("n", "<f2>", lsp.buf.rename)
-map({"n", "i"}, "<f7>", lsp.buf.signature_help)
-map({"n", "i"}, "<f8>", lsp.buf.hover)
-map({"n", "i"}, "<f10>", lsp.buf.references)
-map({"n", "i"}, "<f11>", lsp.buf.incoming_calls)
-map({"n", "i"}, "<f12>", lsp.buf.declaration)
+map("n", "<f26>", lsp.buf.rename)
+map({"n", "i"}, "<f31>", lsp.buf.signature_help)
+map({"n", "i"}, "<f32>", lsp.buf.hover)
+map({"n", "i"}, "<f34>", lsp.buf.references)
+map({"n", "i"}, "<f35>", lsp.buf.incoming_calls)
+map({"n", "i"}, "<f36>", lsp.buf.declaration)
 
 --override popover options
 local popover_opts = {
