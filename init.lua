@@ -21,6 +21,7 @@ vim.cmd [[
 	" options
 	colorscheme tender
 	set colorcolumn=+1
+	set completeopt-=preview
 
 	" show whitespace
 	hi Whitespace guifg=grey37
