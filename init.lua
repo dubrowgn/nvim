@@ -80,6 +80,11 @@ map("i", "<A-Right>", "<C-o>:cnext<CR>")
 map({"n", "v"}, "<bs>", "\"_X")
 map({"n", "v"}, "<del>", "\"_x")
 
+-- rust
+-- https://neovim.io/doc/user/ft_rust.html
+
+vim.g.rust_recommended_style = false
+
 -- lsp
 
 -- Setup language servers
