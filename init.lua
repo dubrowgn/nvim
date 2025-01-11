@@ -89,8 +89,12 @@ vim.g.rust_recommended_style = false
 
 -- Setup language servers
 local lspconfig = require("lspconfig")
+
+-- apt install clangd
 lspconfig.clangd.setup {}
---lspconfig.lua_ls.setup {}
+
+-- https://github.com/LuaLS/lua-language-server/releases
+lspconfig.lua_ls.setup {}
 
 local function make_toggler(handler)
 	local win =-1
