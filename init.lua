@@ -143,10 +143,18 @@ map({"n", "i"}, "<f36>", builtin.lsp_definitions)
 
 require("telescope").setup {
 	defaults = {
+		vimgrep_arguments = {
+			"rg",
+			"-uu", "-g", "!.cache/", "-g", "!.git/", "-g", "!.svn/",
+			"--color=never", "--no-heading", "--with-filename", "--line-number", "--column",
+		},
 		file_ignore_patterns = {
 			".cache",
 			".git",
 			".svn",
+			"%.a",
+			"%.o",
+			"%.so",
 		},
 	},
 }
