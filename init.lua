@@ -108,12 +108,11 @@ end
 
 map({"i", "n", "v"}, "<f1>", make_toggler(vim.diagnostic.open_float))
 map("i", "<c-space>", "<C-x><C-o>")
+
+-- ctrl + F<N> => F<N+24>
 map("n", "<f26>", lsp.buf.rename)
 map({"n", "i"}, "<f31>", lsp.buf.signature_help)
 map({"n", "i"}, "<f32>", lsp.buf.hover)
-map({"n", "i"}, "<f34>", lsp.buf.references)
-map({"n", "i"}, "<f35>", lsp.buf.incoming_calls)
-map({"n", "i"}, "<f36>", lsp.buf.declaration)
 
 --override popover options
 local popover_opts = {
@@ -134,8 +133,13 @@ map({"n", "v"}, "<f6>", ":Git blame<cr>")
 -- telescope
 
 local builtin = require("telescope.builtin")
-map("n", "<c-l>", builtin.find_files)
+map("n", "<c-s-l>", builtin.find_files)
 map("n", "<c-s-f>", builtin.live_grep)
+map("n", "<c-s-s>", builtin.lsp_workspace_symbols);
+
+map({"n", "i"}, "<f34>", builtin.lsp_references)
+map({"n", "i"}, "<f35>", builtin.lsp_incoming_calls)
+map({"n", "i"}, "<f36>", builtin.lsp_definitions)
 
 require("telescope").setup {
 	defaults = {
